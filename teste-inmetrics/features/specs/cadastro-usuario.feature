@@ -17,4 +17,4 @@ Funcionalidade: Cadastro de Usuário
     @cadastro_usuario_existente
     Esquema do Cenário: Cadastro de Usuário Existente
     Quando eu realizo meu cadastro com um usuário já cadastrado
-    Então eu vejo um alerta de "Usuário já cadastrado"
+    Então eu vejo um aviso de "Usuário já cadastrado"
