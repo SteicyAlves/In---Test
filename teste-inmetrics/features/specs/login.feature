@@ -1,5 +1,6 @@
 #language: pt
 
+@login_sistema
 Funcionalidade: Login
     Para acessar as funcionalidades do sistema
     Eu como usuário da Inmetrics previamente cadastrado

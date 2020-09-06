@@ -3,7 +3,7 @@ Dado('que eu estou na tela de cadastro de usuário') do
   end
   
   Quando('eu realizo meu cadastro de usuário') do
-    @user_registration_page.user_registration
+    @user_registration_page.create
   end
   
   Então('eu sou direcionado para a tela de login') do
@@ -11,7 +11,7 @@ Dado('que eu estou na tela de cadastro de usuário') do
   end
   
   Quando('eu realizo meu cadastro com um usuário já cadastrado') do
-    @user_registration_page.duplicate_user_registration
+    @user_registration_page.duplicate
   end
 
   Então('eu vejo um aviso de {string}') do |erro|
