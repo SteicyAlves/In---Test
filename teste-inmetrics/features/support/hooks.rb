@@ -1,6 +1,6 @@
 Before do
-    @login = LoginPage.new
+    @login_page = LoginPage.new
     @table = TableView.new
-    @user_registration = UserRegistrationPage.new
+    @user_registration_page = UserRegistrationPage.new
     @form = FormView.new
 end

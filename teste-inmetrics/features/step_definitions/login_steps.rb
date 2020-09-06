@@ -1,9 +1,9 @@
 Dado('que eu estou na tela de login') do
-    @login.go
+    @login_page.go
 end
 
 Quando('eu realizo login com um {string} e uma {string}') do |user, password|
-  @login.with(user,password)
+  @login_page.with(user,password)
 end
 
 Então('eu vejo a tabela de empregados') do
@@ -11,5 +11,5 @@ Então('eu vejo a tabela de empregados') do
 end
 
 Então('eu vejo um alerta de {string}') do |error|
-    expect(@login.alert).eql? error
+    expect(@login_page.alert).eql? error
 end
