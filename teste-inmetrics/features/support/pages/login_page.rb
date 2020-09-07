@@ -11,8 +11,4 @@ class LoginPage
 
         find('.login100-form-btn').click
     end
-
-    def alert
-        find('.alert').text.chomp
-    end
 end

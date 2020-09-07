@@ -11,5 +11,5 @@ Então('eu vejo a tabela de empregados') do
 end
 
 Então('eu vejo um alerta de {string}') do |error|
-    expect(@login_page.alert).eql? error
+    expect(@alert.message).eql? error
 end

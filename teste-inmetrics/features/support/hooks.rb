@@ -5,8 +5,10 @@ Before do
     @form = FormView.new
     @employee_page = EmployeePage.new
     @navbar = NavbarView.new
+    @alert = AlertView.new
 end
 
 Before("@login") do
+    @login_page.go
     @login_page.with('user-test', 'qwer123')
 end
