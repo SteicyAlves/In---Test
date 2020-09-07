@@ -1,7 +1,7 @@
 class ApiEmployee
     include HTTParty
 
-    base_uri "https://inm-api-test.herokuapp.com"
+    base_uri CONFIG['url_api']
     headers  "Content-Type" => "application/json"
 
     def self.create(employee, authorization)

@@ -6,6 +6,8 @@ Before do
     @employee_page = EmployeePage.new
     @navbar = NavbarView.new
     @alert = AlertView.new
+
+    @authorization = CONFIG["authorization"]
 end
 
 Before("@login") do

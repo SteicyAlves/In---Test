@@ -1,5 +1,5 @@
 Dado('que eu estou autenticado pela API') do
-  @authorization = "Basic aW5tZXRyaWNzOmF1dG9tYWNhbw=="
+  expect(@authorization).not_to be nil
 end
 
 Dado('que eu não estou autenticado pela API') do

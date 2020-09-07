@@ -1,5 +1,7 @@
 ---
 url: 'http://www.inmrobo.tk'
+url_api: 'https://inm-api-test.herokuapp.com'
+authorization: 'Basic aW5tZXRyaWNzOmF1dG9tYWNhbw=='
 users:
   test_user:
     user: "user-test"
