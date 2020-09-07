@@ -8,7 +8,11 @@ class ApiEmployee
         post("/empregado/cadastrar", headers: { "Authorization" => authorization }, body: employee.to_json)
     end
 
-    def self.list_all
-        get("/empregado/list_all")
+    def self.list_all(authorization)
+        get("/empregado/list_all", headers: { "Authorization" => authorization })
+    end
+
+    def self.list(employee_id, authorization)
+        get("/empregado/list/#{employee_id}", headers: { "Authorization" => authorization })
     end
 end
