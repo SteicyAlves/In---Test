@@ -7,4 +7,8 @@ class ApiEmployee
     def self.create(employee, authorization)
         post("/empregado/cadastrar", headers: { "Authorization" => authorization }, body: employee.to_json)
     end
+
+    def self.list_all
+        get("/empregado/list_all")
+    end
 end
