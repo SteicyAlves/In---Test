@@ -9,6 +9,7 @@ Before do
 end
 
 Before("@login") do
+    user = CONFIG["users"]["test_user"]
     @login_page.go
-    @login_page.with('user-test', 'qwer123')
+    @login_page.with(user["user"], user["password"])
 end
