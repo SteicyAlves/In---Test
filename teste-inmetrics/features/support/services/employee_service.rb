@@ -15,4 +15,8 @@ class ApiEmployee
     def self.list(employee_id, authorization)
         get("/empregado/list/#{employee_id}", headers: { "Authorization" => authorization })
     end
+
+    def self.update(employee_id, employee, authorization)
+        put("/empregado/alterar/#{employee_id}", headers: { "Authorization" => authorization }, body: employee.to_json)
+    end
 end

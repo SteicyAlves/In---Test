@@ -4,7 +4,7 @@ require 'faker'
 
 FactoryBot.define do
     factory :employee, class: EmployeeModel do
-        nome { Faker::Name.name_with_middle }
+        nome { Faker::Name.first_name }
         cpf { Faker::IDNumber.brazilian_citizen_number(formatted: true) }
         sexo { "f" }
         admissao { Faker::Date.in_date_period.strftime("%m/%d/%Y") }
@@ -17,15 +17,15 @@ FactoryBot.define do
 
     factory :registered_employee, class: EmployeeModel do
         empregadoId { 0 }
-        nome { Faker::Name.name_with_middle }
+        nome { Faker::Name.first_name }
         cpf { Faker::IDNumber.brazilian_citizen_number(formatted: true) }
-        sexo { "f" }
+        sexo { "m" }
         admissao { Faker::Date.in_date_period.strftime("%m/%d/%Y") }
         cargo { Faker::Job.position }
-        salario { "1.000,00" }
-        tipoContratacao { "clt" }
+        salario { "800,00" }
+        tipoContratacao { "pj" }
         departamentoId { 1 }
-        comissao { "500,00" }
+        comissao { "200,00" }
 
         after(:build) do |employee|
             result = ApiEmployee.create(employee.to_hash, CONFIG["authorization"])
@@ -58,7 +58,7 @@ FactoryBot.define do
     end
 
     factory :employee_invalid_departament, class: EmployeeModel do
-        nome { Faker::Name.name_with_middle }
+        nome { Faker::Name.first_name }
         cpf { Faker::IDNumber.brazilian_citizen_number(formatted: true) }
         sexo { "f" }
         admissao { Faker::Date.in_date_period.strftime("%m/%d/%Y") }
