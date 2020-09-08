@@ -14,18 +14,15 @@ class UserRegistrationPage
     end
 
     def create
-        @user = Faker::Internet.username(specifier: 8)
-        @password = Faker::Internet.password(min_length: 8)
-        create_with(@user, @password)
+        @user = FactoryBot.build(:user)
+        create_with(@user.nome_usuario, @user.senha)
     end
 
     def duplicate
-        @user = Faker::Internet.username(specifier: 8)
-        @password = Faker::Internet.password(min_length: 8)
-
-        create_with(@user, @password)
+        @user = FactoryBot.build(:user)
+        create_with(@user.nome_usuario, @user.senha)
         go
-        create_with(@user, @password)
+        create_with(@user.nome_usuario, @user.senha)
     end
 
     def alert

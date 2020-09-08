@@ -9,6 +9,7 @@ CONFIG = YAML.load_file(File.join(Dir.pwd, "features/support/config/#{ENV["ENV_T
 
 require_relative 'libs/employee_factory'
 require_relative 'services/employee_service'
+require_relative 'libs/user_factory'
 
 case ENV["BROWSER"]
 when "firefox"

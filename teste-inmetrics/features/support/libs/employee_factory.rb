@@ -1,5 +1,4 @@
 require_relative '../models/employee_model'
-require_relative '../hooks'
 require 'faker'
 
 FactoryBot.define do
@@ -89,10 +88,10 @@ FactoryBot.define do
         sexo { "f" }
         admissao { Faker::Date.in_date_period.strftime("%m/%d/%Y") }
         cargo { Faker::Job.position }
-        salario { "1.000,00" }
+        salario { Faker::Number.between(from: 1045, to: 10000).to_s + ",00" }
         tipoContratacao { "clt" }
         departamentoId { 1 }
-        comissao { "500,00" }
+        comissao { Faker::Number.between(from: 1045, to: 10000).to_s + ",00" }
     end
 
     factory :employee_id_string, class: EmployeeModel do
