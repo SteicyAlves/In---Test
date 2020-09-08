@@ -29,3 +29,4 @@ Funcionalidade: Listegem de Funcionário via API
     | invalido | status_code | caso                               |
     | '0'      | '400'       | 'Id de Funcionário não cadastrado' |
     | 'hgfdfg' | '400'       | 'Id de Funcionário inválido'       |
+    | ''       | '404'       | 'Id de Funcionário não informado'  |
