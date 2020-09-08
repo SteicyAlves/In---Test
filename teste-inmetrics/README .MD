@@ -3,15 +3,15 @@
 Para preparação do ambiente de teste siga os seguintes passos:
 
 ```shell script
-- Clone este projeto executando em seu terminal: git clone https://github.com/SteicyAlves/In-Test
+1) Clone este projeto executando em seu terminal: git clone https://github.com/SteicyAlves/In-Test
 
-- Instale o Ruby com versão >= 2.4.0
+2) Instale o Ruby com versão >= 2.4.0
 
-- Instale a gem do Bundler para gestão das GEMs
+3) Instale a gem do Bundler para gestão das GEMs:
     - Após instalar, acesse a raiz do projeto e e execute no terminal: bundler install
         *Após esse comando todas as GEMs utilizadas no projeto serão instaladas
 
-- Instale os drivers do firefox(geckodriver) e chrome(chromedriver)
+4) Instale os drivers do firefox(geckodriver) e chrome(chromedriver):
     - Windows - Após a instalação, descompacte e mova o executável para a pasta Windows;
     - MacOS e Linux - Após a instalação, descompacte e execute os comandos: 
         Para Chromedriver:
