@@ -10,7 +10,7 @@ Funcionalidade: Cadastro de Funcionário via API
     Cenário: Cadastro de Funcionário via API com Sucesso
     Dado que eu estou autenticado pela API
     Quando eu realizo uma requisição de cadastro de funcionário
-    Então eu vejo o id do novo funcionário cadastrado
+    Então eu vejo as informações do novo funcionário cadastrado
     E o código de retorno "202"
 
     @cadastrar_func_não_autenticado_api
