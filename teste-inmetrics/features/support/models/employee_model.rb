@@ -1,8 +1,9 @@
 class EmployeeModel
-    attr_accessor :nome, :cpf, :sexo, :admissao, :cargo, :salario, :tipoContratacao, :departamentoId, :comissao
+    attr_accessor :empregadoId, :nome, :cpf, :sexo, :admissao, :cargo, :salario, :tipoContratacao, :departamentoId, :comissao
 
     def to_hash
         {
+            empregadoId: @empregadoId,
             nome: @nome,
             cpf: @cpf,
             sexo: @sexo,

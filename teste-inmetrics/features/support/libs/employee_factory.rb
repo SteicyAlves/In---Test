@@ -1,4 +1,5 @@
-require_relative "../models/employee_model"
+require_relative '../models/employee_model'
+require_relative '../hooks'
 require 'faker'
 
 FactoryBot.define do
@@ -12,6 +13,24 @@ FactoryBot.define do
         tipoContratacao { "clt" }
         departamentoId { 1 }
         comissao { "500,00" }
+    end
+
+    factory :registered_employee, class: EmployeeModel do
+        empregadoId { 0 }
+        nome { Faker::Name.name_with_middle }
+        cpf { Faker::IDNumber.brazilian_citizen_number(formatted: true) }
+        sexo { "f" }
+        admissao { Faker::Date.in_date_period.strftime("%m/%d/%Y") }
+        cargo { Faker::Job.position }
+        salario { "1.000,00" }
+        tipoContratacao { "clt" }
+        departamentoId { 1 }
+        comissao { "500,00" }
+
+        after(:build) do |employee|
+            result = ApiEmployee.create(employee.to_hash, CONFIG["authorization"])
+            employee.empregadoId = result.parsed_response["empregadoId"]
+        end
     end
 
     factory :employee_blank, class: EmployeeModel do
