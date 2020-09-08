@@ -68,4 +68,43 @@ FactoryBot.define do
         departamentoId { 0 }
         comissao { "500,00" }
     end
+
+    factory :employee_id_nonexistent, class: EmployeeModel do
+        empregadoId { 0 }
+        nome { Faker::Name.first_name }
+        cpf { Faker::IDNumber.brazilian_citizen_number(formatted: true) }
+        sexo { "f" }
+        admissao { Faker::Date.in_date_period.strftime("%m/%d/%Y") }
+        cargo { Faker::Job.position }
+        salario { "1.000,00" }
+        tipoContratacao { "clt" }
+        departamentoId { 1 }
+        comissao { "500,00" }
+    end
+
+    factory :employee_id_blank, class: EmployeeModel do
+        empregadoId { nil }
+        nome { Faker::Name.first_name }
+        cpf { Faker::IDNumber.brazilian_citizen_number(formatted: true) }
+        sexo { "f" }
+        admissao { Faker::Date.in_date_period.strftime("%m/%d/%Y") }
+        cargo { Faker::Job.position }
+        salario { "1.000,00" }
+        tipoContratacao { "clt" }
+        departamentoId { 1 }
+        comissao { "500,00" }
+    end
+
+    factory :employee_id_string, class: EmployeeModel do
+        empregadoId { "text" }
+        nome { Faker::Name.first_name }
+        cpf { Faker::IDNumber.brazilian_citizen_number(formatted: true) }
+        sexo { "f" }
+        admissao { Faker::Date.in_date_period.strftime("%m/%d/%Y") }
+        cargo { Faker::Job.position }
+        salario { "1.000,00" }
+        tipoContratacao { "clt" }
+        departamentoId { 1 }
+        comissao { "500,00" }
+    end
 end

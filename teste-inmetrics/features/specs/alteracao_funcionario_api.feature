@@ -26,7 +26,7 @@ Funcionalidade: Alteração de Funcionário via API
     Então eu vejo o código de retorno <status_code>
 
     Exemplos:
-    | incorreta                      | status_code | caso                          |
-    | 'employee_blank'               | '400'       | 'Campos vazios'               |
-    | 'employee_invalid'             | '400'       | 'Campos inválidos'            |
-    | 'employee_invalid_departament' | '400'       | 'Departamento não cadastrado' |
+    | incorreta                      | status_code | caso                               |
+    | 'employee_blank'               | '400'       | 'Campos vazios'                    |
+    | 'employee_invalid'             | '400'       | 'Campos inválidos'                 |
+    | 'employee_invalid_departament' | '400'       | 'Departamento não cadastrado'      |

@@ -22,11 +22,11 @@ Funcionalidade: Listegem de Funcionário via API
 
     @listar_funcionario_erro_api
     Cenário: Listar Funcionário via API com Erro
-    Quando eu realizo uma requisição de listagem de um funcionário <invalido>
+    Quando eu realizo uma requisição de listagem de um funcionário <incorreta>
     Então eu vejo o código de retorno <status_code>
 
     Exemplos:
-    | invalido | status_code | caso                               |
-    | '0'      | '400'       | 'Id de Funcionário não cadastrado' |
-    | 'hgfdfg' | '400'       | 'Id de Funcionário inválido'       |
-    | ''       | '404'       | 'Id de Funcionário não informado'  |
+    | incorreta                  | status_code | caso                               |
+    | 'employee_id_nonexistent' | '400'       | 'Id de Funcionário não cadastrado' |
+    | 'employee_id_string'      | '400'       | 'Id de Funcionário inválido'       |
+    | 'employee_id_blank'       | '404'       | 'Id de Funcionário não informado'  |

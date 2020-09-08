@@ -11,6 +11,7 @@ Quando('eu realizo uma requisição de listagem de todos funcionários') do
     expect(@result.parsed_response["empregadoId"]).to eql @registered_employee.empregadoId
   end
 
-  Quando('eu realizo uma requisição de listagem de um funcionário {string}') do |employee_Id|
-    @result = ApiEmployee.list(employee_Id, @authorization)
+  Quando('eu realizo uma requisição de listagem de um funcionário {string}') do |employee_type|
+    @employee = FactoryBot.build(employee_type)
+    @result = ApiEmployee.list(@employee.empregadoId, @authorization)
   end

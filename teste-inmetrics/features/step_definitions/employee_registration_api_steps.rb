@@ -27,8 +27,8 @@ end
     expect(@result.response.code).to eql status_code
   end
 
-  Quando('eu realizo uma requisição de cadastro de funcionário {string}') do |body_type|
-    @employee = FactoryBot.build(body_type)
+  Quando('eu realizo uma requisição de cadastro de funcionário {string}') do |employee_type|
+    @employee = FactoryBot.build(employee_type)
     @result = ApiEmployee.create(@employee.to_hash, @authorization)
   end
 

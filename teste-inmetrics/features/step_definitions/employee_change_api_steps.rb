@@ -15,8 +15,8 @@ Quando('eu realizo uma requisição de alteração de funcionário') do
     expect(@result.parsed_response["tipoContratacao"]).to eql @new_employee.tipoContratacao
   end
   
-  Quando('eu realizo uma requisição de alteração de funcionário {string}') do |body_type|
+  Quando('eu realizo uma requisição de alteração de funcionário {string}') do |employee_type|
     @registered_employee = FactoryBot.build(:registered_employee)
-    @new_employee = FactoryBot.build(body_type)
+    @new_employee = FactoryBot.build(employee_type)
     @result = ApiEmployee.update(@registered_employee.empregadoId, @new_employee.to_hash, @authorization)
   end
