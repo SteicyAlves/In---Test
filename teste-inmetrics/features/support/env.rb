@@ -4,6 +4,7 @@ require 'selenium-webdriver'
 require 'faker'
 require 'factory_bot'
 require 'httparty'
+require 'money'
 
 CONFIG = YAML.load_file(File.join(Dir.pwd, "features/support/config/#{ENV["ENV_TYPE"]}.yaml"))
 

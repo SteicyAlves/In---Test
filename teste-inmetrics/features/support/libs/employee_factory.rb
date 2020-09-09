@@ -1,6 +1,10 @@
 require_relative '../models/employee_model'
 require 'faker'
 
+def generate_money
+    Money.new(Faker::Number.number(digits: 6), "BRL").format(symbol: false, thousands_separator: ".", decimal_mark: ",")
+end
+
 FactoryBot.define do
     factory :employee, class: EmployeeModel do
         nome { Faker::Name.first_name }
@@ -8,10 +12,10 @@ FactoryBot.define do
         sexo { "f" }
         admissao { Faker::Date.in_date_period.strftime("%m/%d/%Y") }
         cargo { Faker::Job.position }
-        salario { "1.000,00" }
+        salario { generate_money }
         tipoContratacao { "clt" }
         departamentoId { 1 }
-        comissao { "500,00" }
+        comissao { generate_money }
     end
 
     factory :registered_employee, class: EmployeeModel do
@@ -21,10 +25,10 @@ FactoryBot.define do
         sexo { "m" }
         admissao { Faker::Date.in_date_period.strftime("%m/%d/%Y") }
         cargo { Faker::Job.position }
-        salario { "800,00" }
+        salario { generate_money }
         tipoContratacao { "pj" }
         departamentoId { 1 }
-        comissao { "200,00" }
+        comissao { generate_money }
 
         after(:build) do |employee|
             result = ApiEmployee.create(employee.to_hash, CONFIG["authorization"])
@@ -62,10 +66,10 @@ FactoryBot.define do
         sexo { "f" }
         admissao { Faker::Date.in_date_period.strftime("%m/%d/%Y") }
         cargo { Faker::Job.position }
-        salario { "1.000,00" }
+        salario { generate_money }
         tipoContratacao { "clt" }
         departamentoId { 0 }
-        comissao { "500,00" }
+        comissao { generate_money }
     end
 
     factory :employee_id_nonexistent, class: EmployeeModel do
@@ -75,10 +79,10 @@ FactoryBot.define do
         sexo { "f" }
         admissao { Faker::Date.in_date_period.strftime("%m/%d/%Y") }
         cargo { Faker::Job.position }
-        salario { "1.000,00" }
+        salario { generate_money }
         tipoContratacao { "clt" }
         departamentoId { 1 }
-        comissao { "500,00" }
+        comissao { generate_money }
     end
 
     factory :employee_id_blank, class: EmployeeModel do
@@ -88,10 +92,10 @@ FactoryBot.define do
         sexo { "f" }
         admissao { Faker::Date.in_date_period.strftime("%m/%d/%Y") }
         cargo { Faker::Job.position }
-        salario { Faker::Number.between(from: 1045, to: 10000).to_s + ",00" }
+        salario { generate_money }
         tipoContratacao { "clt" }
         departamentoId { 1 }
-        comissao { Faker::Number.between(from: 1045, to: 10000).to_s + ",00" }
+        comissao { generate_money }
     end
 
     factory :employee_id_string, class: EmployeeModel do
@@ -101,9 +105,9 @@ FactoryBot.define do
         sexo { "f" }
         admissao { Faker::Date.in_date_period.strftime("%m/%d/%Y") }
         cargo { Faker::Job.position }
-        salario { "1.000,00" }
+        salario { generate_money }
         tipoContratacao { "clt" }
         departamentoId { 1 }
-        comissao { "500,00" }
+        comissao { generate_money }
     end
 end
