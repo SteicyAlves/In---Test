@@ -7,9 +7,12 @@ require 'httparty'
 
 CONFIG = YAML.load_file(File.join(Dir.pwd, "features/support/config/#{ENV["ENV_TYPE"]}.yaml"))
 
+require_relative 'helpers.rb'
 require_relative 'libs/employee_factory'
 require_relative 'services/employee_service'
 require_relative 'libs/user_factory'
+
+World(Helpers)
 
 case ENV["BROWSER"]
 when "firefox"

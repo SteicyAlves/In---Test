@@ -15,3 +15,13 @@ Before("@login") do
     @login_page.go
     @login_page.with(user["user"], user["password"])
 end
+
+After do |scenario|
+    file = file_name(scenario)
+
+    if scenario.failed?
+        print_screen("report/screenshots", file , "falhou")
+    else
+        print_screen("report/screenshots", file , "passou")
+    end
+end
